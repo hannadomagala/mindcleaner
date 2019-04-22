@@ -1,0 +1,65 @@
+/* full tasks */
+
+.all__task {
+    width: 70%;
+    margin: 20px auto;
+    border: 1px solid var(--shadow-color);
+    box-shadow: 2px 2px 7px 2px var(--shadow-color);
+    padding: 15px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contexts {
+    font-size: .7em;
+    margin-bottom: 7px;
+}
+
+.contexts__item {
+    color: white;
+    padding: 2px;
+}
+
+.task__name {
+    color: var(--secondary-color);
+    margin: 3px 0;
+    font-size: 1em;
+}
+
+.task__delegation {
+    font-size: .7em;
+    margin: 0;
+}
+
+.task__doer {
+    font-weight: 600;
+}
+
+.task__time {
+    font-size: .7em;
+    margin: 0;
+}
+
+.task__details {
+    list-style: disc;
+    padding: 0 20px;
+    line-height: 1.2em;
+    font-size: .8em;
+}
+
+.task__edit {
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.task__is-done {
+    padding: 10px;
+    color: var(--secondary-color);
+    transition: transform .2s linear;
+}
+
+.task__is-done:hover {
+    transform: scale(1.25) rotate(5deg);
+}

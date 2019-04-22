@@ -1,8 +1,19 @@
 /* variables */
 
 :root {
-    --primary-color: rgb(178, 219, 213);
-    --secondary-color: rgb(250, 215, 98);
-    --text-color: rgb(123, 123, 123);
+    /* colors */
+    --primary-color: rgb(115, 82, 144);
+    --secondary-color: rgb(134, 187, 189);
+    --extra-color: rgb(248, 154, 159);
+    --text-color: rgb(87, 87, 87);
+    --shadow-color: rgba(123, 123, 123, 0.17);
+
+    /* fonts */
+    --main-font: 'Work Sans', sans-serif;
+    --desktop-size: 15px;
+
+    /* dimentions */
+    --header-height: 70px;
+    --nav-width: 23%;
   }
   

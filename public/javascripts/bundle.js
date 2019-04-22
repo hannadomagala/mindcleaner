@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -97,6 +97,28 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./node
 
 /***/ }),
 
+/***/ "./src/css/contexts.css":
+/*!******************************!*\
+  !*** ./src/css/contexts.css ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/contexts.css?");
+
+/***/ }),
+
+/***/ "./src/css/inbox.css":
+/*!***************************!*\
+  !*** ./src/css/inbox.css ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/inbox.css?");
+
+/***/ }),
+
 /***/ "./src/css/main.css":
 /*!**************************!*\
   !*** ./src/css/main.css ***!
@@ -105,6 +127,39 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./node
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/main.css?");
+
+/***/ }),
+
+/***/ "./src/css/page-content.css":
+/*!**********************************!*\
+  !*** ./src/css/page-content.css ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/page-content.css?");
+
+/***/ }),
+
+/***/ "./src/css/page-template.css":
+/*!***********************************!*\
+  !*** ./src/css/page-template.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/page-template.css?");
+
+/***/ }),
+
+/***/ "./src/css/tasks.css":
+/*!***************************!*\
+  !*** ./src/css/tasks.css ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/tasks.css?");
 
 /***/ }),
 
@@ -119,15 +174,27 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 
 /***/ }),
 
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! normalize.css */ \"./node_modules/normalize.css/normalize.css\");\n/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(normalize_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_variables_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/variables.css */ \"./src/css/variables.css\");\n/* harmony import */ var _css_variables_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_variables_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/main.css */ \"./src/css/main.css\");\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_main_css__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! normalize.css */ \"./node_modules/normalize.css/normalize.css\");\n/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(normalize_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_variables_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/variables.css */ \"./src/css/variables.css\");\n/* harmony import */ var _css_variables_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_variables_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/main.css */ \"./src/css/main.css\");\n/* harmony import */ var _css_main_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_main_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _css_page_template_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../css/page-template.css */ \"./src/css/page-template.css\");\n/* harmony import */ var _css_page_template_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_page_template_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _css_page_content_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../css/page-content.css */ \"./src/css/page-content.css\");\n/* harmony import */ var _css_page_content_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_css_page_content_css__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _css_inbox_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../css/inbox.css */ \"./src/css/inbox.css\");\n/* harmony import */ var _css_inbox_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_css_inbox_css__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _css_tasks_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/tasks.css */ \"./src/css/tasks.css\");\n/* harmony import */ var _css_tasks_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_css_tasks_css__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _css_contexts_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/contexts.css */ \"./src/css/contexts.css\");\n/* harmony import */ var _css_contexts_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_css_contexts_css__WEBPACK_IMPORTED_MODULE_7__);\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./menu */ \"./src/js/menu.js\");\n// css imports\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n//basic functionality imports\r\n\r\n\r\n\r\nObject(_menu__WEBPACK_IMPORTED_MODULE_8__[\"default\"])();\r\n\r\nconst contextsContainer = document.querySelector('.sort-by-context');\r\nconst contextsBtn = document.querySelector('.page-nav__link--sort');\r\n\r\nconst toggleContexts = (e) => {\r\n    e.preventDefault();\r\n    contextsContainer.classList.toggle('sort-by-context--toggle');\r\n};\r\n\r\ncontextsBtn.addEventListener('click', toggleContexts);\r\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/menu.js":
+/*!************************!*\
+  !*** ./src/js/menu.js ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst validateName = (name) => {\r\n    name = name.replace(/\\s+/g, '');\r\n    return name.toLowerCase();\r\n}\r\n\r\nconst highlightActive = () => {\r\n    const menuItems = document.querySelectorAll('.page-nav__item');\r\n    let pageName = document.querySelector('.page-content__title').innerText;\r\n    const itemsArr = [...menuItems];\r\n    console.log(pageName);\r\n    \r\n    const rightIndex = itemsArr.findIndex((item) => {\r\n        pageName = validateName(pageName);\r\n        console.log(pageName);\r\n        return item.dataset.name === pageName;\r\n    });\r\n    \r\n    console.log(rightIndex);\r\n\r\n    menuItems[rightIndex].classList.add('page-nav__item--active');\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (highlightActive);\n\n//# sourceURL=webpack:///./src/js/menu.js?");
 
 /***/ })
 

@@ -1,16 +1,28 @@
 // imports
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// pages imports
+const indexRouter = require('./routes/pages/index');
+const inboxRouter = require('./routes/pages/inbox');
+const allRouter = require('./routes/pages/all');
+const todayRouter = require('./routes/pages/today');
+const thisweekRouter = require('./routes/pages/thisweek');
+const somedayRouter = require('./routes/pages/someday');
+const waitingRouter = require('./routes/pages/waiting');
+const doneRouter = require('./routes/pages/done');
+// const usersRouter = require('./routes/users');
 
-var app = express();
+// api imports
 
-// view engine setup
+
+const app = express();
+app.locals.userName = 'Master';
+
+// templates
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -21,8 +33,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// pages
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/inbox', inboxRouter);
+app.use('/all', allRouter);
+app.use('/today', todayRouter);
+app.use('/thisweek', thisweekRouter);
+app.use('/someday', somedayRouter);
+app.use('/waiting', waitingRouter);
+app.use('/done', doneRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

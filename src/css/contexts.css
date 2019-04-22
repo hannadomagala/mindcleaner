@@ -1,0 +1,25 @@
+/* context-colors */
+
+.c-home {
+    background: rgb(204, 115, 182);
+}
+
+.c-shopping {
+    background: rgb(103, 167, 66);
+}
+
+.c-outside {
+    background: rgb(228, 198, 66);
+}
+
+.c-computer {
+    background: rgb(66, 169, 228);
+}
+
+.c-phone {
+    background: rgb(228, 125, 66);
+}
+
+.c-work {
+    background: rgb(209, 37, 37);
+}

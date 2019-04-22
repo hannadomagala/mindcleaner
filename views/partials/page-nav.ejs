@@ -1,0 +1,28 @@
+<div class="page-nav">
+    <div class="welcome">
+        Hello, <span class="welcome__user-name"><%= userName %></span>!
+    </div>
+    <nav>
+        <ul class="page-nav__list">
+            <li class="page-nav__item" data-name="contexts"><a href="" tabindex="0" class="page-nav__link page-nav__link--sort"><i class="fas page-nav__icon page-nav__icon--sort fa-at"></i> Contexts</a></li>
+            <li class="page-nav__item" data-name="inbox"><a href="inbox" tabindex="0" class="page-nav__link"><i class="fas page-nav__icon fa-download"></i> Inbox</a></li>
+            <li class="page-nav__item" data-name="alltasks"><a href="all" tabindex="0" class="page-nav__link"><i class="far page-nav__icon fa-dot-circle"></i> All tasks</a></li>
+            <li class="page-nav__item" data-name="today"><a href="today" tabindex="0" class="page-nav__link"><i class="far page-nav__icon fa-star"></i> Today</a></li>
+            <li class="page-nav__item" data-name="thisweek"><a href="thisweek" tabindex="0" class="page-nav__link"><i class="far page-nav__icon fa-calendar-alt"></i> This week</a></li>
+            <li class="page-nav__item" data-name="someday"><a href="someday" tabindex="0" class="page-nav__link"><i class="fas page-nav__icon fa-question"></i> Someday</a></li>
+            <li class="page-nav__item" data-name="waiting"><a href="waiting" tabindex="0" class="page-nav__link"><i class="fas page-nav__icon fa-history"></i> Waiting</a></li>
+            <li class="page-nav__item" data-name="done"><a href="done" tabindex="0" class="page-nav__link"><i class="fas page-nav__icon fa-check"></i> Done</a></li>
+        </ul>
+    </nav>
+    <button class="add-task">Skip inbox <i class="fas fa-plus"></i></button>
+</div>
+<div class="sort-by-context">
+    <div class="contexts">
+        <span class="contexts__item c-outside">@outside</span>
+        <span class="contexts__item c-shopping">@shopping</span>
+        <span class="contexts__item c-home">@home</span>
+        <span class="contexts__item c-computer">@computer</span>
+        <span class="contexts__item c-phone">@phone</span>
+        <span class="contexts__item c-work">@work</span>
+    </div>
+</div>

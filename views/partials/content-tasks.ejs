@@ -1,0 +1,92 @@
+<main class="page-content">
+    <header class="page-content__header">
+        <h1 class="page-content__title">
+            <%= name %> 
+        </h1>
+        <p class="page-content__details">
+            You have <span class="page-content__counter">3</span> <%= description %>.
+        </p>
+    </header>
+    <section class="all tasks">
+        <section class="all__tasks">
+            <article class="all__task task">
+                <div>
+                    <div class="contexts">
+                        <span class="contexts__item c-outside">@outside</span>
+                        <span class="contexts__item c-shopping">@shopping</span>
+                    </div>
+                    <h3 class="task__name">
+                        Go to the mall.
+                    </h3>
+                    <p class="task__time">Needs to be done by: <time datetime="2018-07-07">28 April 2019, Tuesday</time></p>
+                    <ul class="task__details">
+                        <li>Step one.</li>
+                        <li>Next go get the bus.</li>
+                        <li>Get out the bus.</li>
+                        <li>Start walking.</li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="task__edit"><i class="fas fa-edit"></i></button>
+                    <button class="task__is-done"><i class="fas fa-check"></i></button>
+                </div>
+            </article>
+            <article class="all__task task">
+                <div>
+                    <div class="contexts">
+                        <span class="contexts__item c-home">@home</span>
+                        <span class="contexts__item c-computer">@computer</span>
+                    </div>
+                    <h3 class="task__name">
+                        Send e-mail to Sandy.
+                    </h3>
+                    <p class="task__time">Needs to be done by: <time datetime="2018-07-07">28 April 2019, Tuesday</time></p>
+                </div>
+                <div>
+                    <button class="task__edit"><i class="fas fa-edit"></i></button>
+                    <button class="task__is-done"><i class="fas fa-check"></i></button>
+                </div>
+            </article>
+            <article class="all__task task">
+                <div>
+                    <div class="contexts">
+                        <span class="contexts__item c-phone">@phone</span>
+                        <span class="contexts__item c-home">@home</span>
+                    </div>
+                    <h3 class="task__name">
+                        Call grandma.
+                    </h3>
+                    <p class="task__time">Needs to be done by: <time datetime="2018-07-07">28 April 2019, Tuesday</time></p>
+                    <ul class="task__details">
+                        <li>Find the freaking phone.</li>
+                        <li>Search for grandma number.</li>
+                    </ul>
+                    <p class="task__delegation">Delegated to: <span class="task__doer">Sister</span></p>
+                </div>
+                <div>
+                    <button class="task__edit"><i class="fas fa-edit"></i></button>
+                    <button class="task__is-done"><i class="fas fa-check"></i></button>
+                </div>
+            </article>
+            <article class="all__task task">
+                <div>
+                    <div class="contexts">
+                        <span class="contexts__item c-computer">@computer</span>
+                        <span class="contexts__item c-work">@work</span>
+                    </div>
+                    <h3 class="task__name">
+                        Plan my work for next week.
+                    </h3>
+                    <p class="task__time">Needs to be done by: <time datetime="">someday</time></p>
+                    <ul class="task__details">
+                        <li>Check something very important to do this task.</li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="task__edit"><i class="fas fa-edit"></i></button>
+                    <button class="task__is-done"><i class="fas fa-check"></i></button>
+                </div>
+            </article>
+        </section>
+    </section>
+</main>

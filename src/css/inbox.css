@@ -1,0 +1,34 @@
+/* inbox */
+
+.inbox {
+    width: 100%;
+    text-align: center;
+}
+
+.inbox__thought {
+    width: 70%;
+    margin: 20px auto;
+    border: 1px solid var(--shadow-color);
+    box-shadow: 2px 2px 7px 2px var(--shadow-color);
+    padding: 15px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.thought__time {
+    font-size: .7em;
+    padding: 0;
+    margin: 10px 5px 0 0;
+    color: var(--secondary-color);
+}
+
+.thought__analyze {
+    color: var(--secondary-color);
+    transition: transform .2s linear;
+}
+
+.thought__analyze:hover {
+    transform: translateX(.3em);
+}

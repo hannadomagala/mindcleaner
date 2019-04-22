@@ -1,0 +1,53 @@
+<main class="page-content">
+    <header class="page-content__header">
+        <h1 class="page-content__title">
+            <%= name %> 
+        </h1>
+        <p class="page-content__details">
+            You have <span class="page-content__counter">3</span> <%= description %>.
+        </p>
+    </header>
+    <section class="inbox tasks">
+        <form action="" method="post" class="add-form">
+            <input type="text" name="thought" placeholder="What's on your mind?" class="add-form__input" required />
+            <input type="submit" value="+" class="add-form__send" />
+        </form>
+        <section class="inbox__tasks">
+            <article class="inbox__thought thought">
+                <div>
+                    Go to the mall.
+                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
+                </div>
+                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
+            </article>
+            <article class="inbox__thought thought">
+                <div>
+                    Meeting with client at Tuesday.
+                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
+                </div>
+                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
+                </article>
+            <article class="inbox__thought thought">
+                <div>
+                    Call grandma.
+                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
+                </div>
+                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
+            </article>
+            <article class="inbox__thought thought">
+                <div>
+                    Do something fun.
+                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
+                </div>
+                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
+            </article>
+            <article class="inbox__thought thought">
+                <div>
+                    Do bloodtests.
+                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
+                </div>
+                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
+            </article>
+        </section>
+    </section>
+</main>
