@@ -7,6 +7,7 @@
 const app = require('../app');
 const debug = require('debug')('mindcleaner:server');
 const http = require('http');
+const mongoose = require('mongoose');
 
 /**
  * Get port from environment and store in Express.
@@ -89,3 +90,11 @@ function onListening() {
   debug('Listening on ' + bind);
   console.log(`...Listening on port: ${port}`)
 }
+
+/**
+ * Connecting database.
+ */
+
+ mongoose.connect('mongodb://localhost/api', {useNewUrlParser: true})
+  .then(() => console.log('Connected to MongoDB...'))
+  .catch((err) => console.log('Could not connect to MongoDB:', err))

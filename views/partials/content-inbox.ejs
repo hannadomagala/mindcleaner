@@ -4,50 +4,34 @@
             <%= name %> 
         </h1>
         <p class="page-content__details">
-            You have <span class="page-content__counter">3</span> <%= description %>.
+            You have <span class="page-content__counter"><%= counter %></span> <%= description %>.
         </p>
     </header>
     <section class="inbox tasks">
-        <form action="" method="post" class="add-form">
-            <input type="text" name="thought" placeholder="What's on your mind?" class="add-form__input" required />
-            <input type="submit" value="+" class="add-form__send" />
+        <form action="/thoughts" method="post" class="add-form">
+            <input class="add-form__input" type="text" name="thought" placeholder="What's on your mind?" required />
+            <input class="add-form__send" type="submit" value="" />
         </form>
         <section class="inbox__tasks">
-            <article class="inbox__thought thought">
-                <div>
-                    Go to the mall.
-                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
-                </div>
-                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
-            </article>
-            <article class="inbox__thought thought">
-                <div>
-                    Meeting with client at Tuesday.
-                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
-                </div>
-                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
+            <% for(var i = 0; i < thoughts.length; i++) { %>
+                <article class="inbox__thought thought">
+                    <div>
+                        <%= thoughts[i].title %>
+                        <p class="thought__time">
+                            <time datetime="<%= thoughts[i].date %>">
+                                <%= getDay(thoughts[i].date) %>, <%= getWeekDay(thoughts[i].date) %>
+                            </time>
+                        </p>
+                    </div>
+                    <div>
+                        <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
+                        <form action="/thoughts/delete" method="post" class="thought__delete">
+                            <input type="hidden" name="id" value="<%= thoughts[i].id %>">
+                            <input class="delete-form__delete" type="submit" value="" />
+                        </form>
+                    </div>
                 </article>
-            <article class="inbox__thought thought">
-                <div>
-                    Call grandma.
-                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
-                </div>
-                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
-            </article>
-            <article class="inbox__thought thought">
-                <div>
-                    Do something fun.
-                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
-                </div>
-                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
-            </article>
-            <article class="inbox__thought thought">
-                <div>
-                    Do bloodtests.
-                    <p class="thought__time">Added: <time datetime="2018-07-07">July 7</time></p>
-                </div>
-                <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
-            </article>
+            <% } %>
         </section>
     </section>
 </main>

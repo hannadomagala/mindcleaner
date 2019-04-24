@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .thought__time {
@@ -31,4 +32,13 @@
 
 .thought__analyze:hover {
     transform: translateX(.3em);
+}
+
+.delete-form__delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    font-family: 'FontAwesome';
+    color: rgba(123, 123, 123, 0.35);
 }

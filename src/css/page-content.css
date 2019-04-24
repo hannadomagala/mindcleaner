@@ -55,8 +55,8 @@
 
 .add-form__send {
     border: none;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
-    border-color: var(--shadow-color);
     color: var(--secondary-color);
+    font-family: 'FontAwesome';
 }

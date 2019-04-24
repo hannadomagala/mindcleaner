@@ -1,9 +1,20 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const Thought = require('../../models/thought');
 
 /* GET inbox */
-router.get('/', function(req, res, next) {
-  res.render('inbox', { name: 'Inbox', description: 'thoughts to analyze' });
+
+router.get('/', async function(req, res) {
+  const number = await Thought.count();
+  const thoughtsList = await Thought.find().sort('date');;
+
+  res.render('inbox', {
+    name: 'Inbox',
+    description: 'thoughts to analyze',
+    thoughts: thoughtsList,
+    counter: number
+  });
+
 });
 
 module.exports = router;

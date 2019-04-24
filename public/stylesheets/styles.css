@@ -392,6 +392,7 @@ a {
 button, input[type="submit"] {
   background: none;
   cursor: pointer;
+  border: none;
 }
 
 button{
@@ -626,10 +627,10 @@ ul {
 
 .add-form__send {
     border: none;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
-    border-color: var(--shadow-color);
     color: var(--secondary-color);
+    font-family: 'FontAwesome';
 }
 /* inbox */
 
@@ -648,6 +649,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .thought__time {
@@ -664,6 +666,15 @@ ul {
 
 .thought__analyze:hover {
     transform: translateX(.3em);
+}
+
+.delete-form__delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    font-family: 'FontAwesome';
+    color: rgba(123, 123, 123, 0.35);
 }
 /* full tasks */
 
