@@ -2,21 +2,21 @@ const express = require("express");
 const router = express.Router();
 const Task = require("../../models/task");
 
-/* GET somedayk */
+/* GET outside */
 router.get("/", async (req, res) => {
   const tasksList = await Task.find({
-    someday: true,
-    done: false
+    contexts: { name: "outside", class: "c-outside" }
   });
 
   const number = tasksList.length;
 
+  console.log(tasksList);
   res.render("tasks", {
-    name: "Someday",
-    urlName: "someday",
-    description: "tasks waiting to be planned",
-    counter: number,
-    tasks: tasksList
+    name: "@outside",
+    urlName: "outside",
+    description: "tasks to be done outside",
+    tasks: tasksList,
+    counter: number
   });
 });
 

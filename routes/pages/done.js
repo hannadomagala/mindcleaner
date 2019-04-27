@@ -1,9 +1,22 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const Task = require("../../models/task");
 
 /* GET donek */
-router.get('/', function(req, res, next) {
-  res.render('tasks', { name: 'Done', description: 'tasks done' });
+router.get("/", async (req, res) => {
+  const tasksList = await Task.find({
+    done: true
+  });
+
+  const number = tasksList.length;
+
+  res.render("done", {
+    name: "Done",
+    urlName: "done",
+    description: "tasks done",
+    counter: number,
+    tasks: tasksList
+  });
 });
 
 module.exports = router;

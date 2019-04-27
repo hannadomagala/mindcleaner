@@ -22,14 +22,6 @@
           <h2 class="task__name">
             <%= tasks[i].title %>
           </h2>
-          <p class="task__time">
-            <% if (tasks[i].date) { %> Needs to be done by:
-            <time datetime="<%= tasks[i].date %>">
-              <%= getDay(tasks[i].date) %>, <%= getWeekDay(tasks[i].date) %>
-            </time>
-            <% } %> <% if (tasks[i].someday) { %> Needs to be done by: Someday
-            <% } %>
-          </p>
           <p class="task__details">
             <%- tasks[i].details %>
           </p>
@@ -39,14 +31,13 @@
           </p>
         </div>
         <div class="task__controllers">
-          <a href="edittask/<%= tasks[i]._id %>" class="task__edit"><i class="fas fa-edit"></i></a>
           <form
             action="/tasks/<%= tasks[i]._id %>"
-            class="task__is-done"
+            class="task__delete-form"
             data-id="<%= tasks[i]._id %>"
           >
-            <input class="task_set-done" type="submit" value="" />
-          </form>
+            <input class="task_delete" type="submit" value="" />
+        </form>
         </div>
       </article>
       <% } %>

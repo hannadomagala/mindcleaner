@@ -6,11 +6,11 @@
     --secondary-color: rgb(134, 187, 189);
     --extra-color: rgb(248, 154, 159);
     --text-color: rgb(87, 87, 87);
-    --shadow-color: rgba(123, 123, 123, 0.17);
+    --shadow-color: rgba(123, 123, 123, 0.20);
 
     /* fonts */
     --main-font: 'Work Sans', sans-serif;
-    --desktop-size: 15px;
+    --desktop-size: 16px;
 
     /* dimentions */
     --header-height: 70px;

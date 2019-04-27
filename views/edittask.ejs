@@ -3,10 +3,10 @@
   <head>
     <% include partials/head %>
   </head>
-  <body class="<%= urlName %>">
+  <body class="<%= urlName %>" data-id=<%= task._id %>>
     <% include partials/page-header %>
     <div class="page-wrapper">
-      <% include partials/page-nav %> <% include partials/content-tasks %>
+      <% include partials/add-nav %> <% include partials/content-edittask %>
     </div>
   </body>
 </html>

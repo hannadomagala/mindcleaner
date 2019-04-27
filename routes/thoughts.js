@@ -8,16 +8,16 @@ router.post("/", async (req, res) => {
         title: req.body.thought
     });
 
-    const result = await thought.save();
-    res.redirect("/inbox");
+    const result = await thought.save()
+    res.send(thought);
 });
 
-router.post('/delete', async (req, res) => {
-    const thought = await Thought.findByIdAndRemove(req.body.id);
+router.delete('/:id', async (req, res) => {
+    const thought = await Thought.findByIdAndRemove(req.params.id);
   
     if (!thought) return res.status(404).send('The thought with the given ID was not found.');
 
-    res.redirect("/inbox");
+    res.send('Item deleted');
   });
 
 //get method in pages/inbox

@@ -1,37 +1,50 @@
 <main class="page-content">
-    <header class="page-content__header">
-        <h1 class="page-content__title">
-            <%= name %> 
-        </h1>
-        <p class="page-content__details">
-            You have <span class="page-content__counter"><%= counter %></span> <%= description %>.
-        </p>
-    </header>
-    <section class="inbox tasks">
-        <form action="/thoughts" method="post" class="add-form">
-            <input class="add-form__input" type="text" name="thought" placeholder="What's on your mind?" required />
-            <input class="add-form__send" type="submit" value="" />
-        </form>
-        <section class="inbox__tasks">
-            <% for(var i = 0; i < thoughts.length; i++) { %>
-                <article class="inbox__thought thought">
-                    <div>
-                        <%= thoughts[i].title %>
-                        <p class="thought__time">
-                            <time datetime="<%= thoughts[i].date %>">
-                                <%= getDay(thoughts[i].date) %>, <%= getWeekDay(thoughts[i].date) %>
-                            </time>
-                        </p>
-                    </div>
-                    <div>
-                        <button class="thought__analyze"><i class="fas fa-arrow-right"></i></button>
-                        <form action="/thoughts/delete" method="post" class="thought__delete">
-                            <input type="hidden" name="id" value="<%= thoughts[i].id %>">
-                            <input class="delete-form__delete" type="submit" value="" />
-                        </form>
-                    </div>
-                </article>
-            <% } %>
-        </section>
+  <header class="page-content__header">
+    <h1 class="page-content__title">
+      <%= name %>
+    </h1>
+    <p class="page-content__details">
+      You have <span class="page-content__counter"><%= counter %></span> <%=
+      description %>.
+    </p>
+  </header>
+  <section class="tasks">
+    <form action="/thoughts" class="add-thought">
+      <input
+        class="add-thought__input"
+        type="text"
+        name="thought"
+        placeholder="What's on your mind?"
+        required
+      />
+      <input class="add-thought__send" type="submit" value="" />
+    </form>
+    <section class="inbox__tasks">
+      <% for(var i = 0; i < thoughts.length; i++) { %>
+      <article class="inbox__thought thought">
+        <div>
+          <%= thoughts[i].title %>
+          <p class="thought__time">
+            <time datetime="<%= thoughts[i].date %>">
+              <%= getDay(thoughts[i].date) %>, <%= getWeekDay(thoughts[i].date)
+              %>
+            </time>
+          </p>
+        </div>
+        <div>
+          <a href="/addtask/<%= thoughts[i]._id %>" class="thought__analyze"
+            ><i class="fas fa-arrow-right"></i
+          ></a>
+          <form
+            action="/thoughts/<%= thoughts[i]._id %>"
+            class="delete-thought"
+            data-id="<%= thoughts[i]._id %>"
+          >
+            <input class="delete-thought__send" type="submit" value="" />
+          </form>
+        </div>
+      </article>
+      <% } %>
     </section>
+  </section>
 </main>

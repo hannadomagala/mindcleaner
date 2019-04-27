@@ -1,10 +1,5 @@
 /* inbox */
 
-.inbox {
-    width: 100%;
-    text-align: center;
-}
-
 .inbox__thought {
     width: 70%;
     margin: 20px auto;
@@ -28,17 +23,23 @@
 .thought__analyze {
     color: var(--secondary-color);
     transition: transform .2s linear;
+    border: none;
+    font-size: .9em;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .thought__analyze:hover {
     transform: translateX(.3em);
 }
 
-.delete-form__delete {
+.delete-thought__send {
     position: absolute;
     top: 0;
     right: 0;
     padding: 4px;
     font-family: 'FontAwesome';
     color: rgba(123, 123, 123, 0.35);
+    border: none;
 }

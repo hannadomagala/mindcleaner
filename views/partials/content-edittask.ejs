@@ -1,0 +1,52 @@
+<main class="page-content">
+  <header class="page-content__header">
+    <h1 class="page-content__title">
+      <%= name %>
+    </h1>
+  </header>
+  <div id="add-task" class="add-task">
+    <form class="add-task__form" action="/tasks/">
+      <label for="title">Title</label>
+      <input
+        class="add-task__input"
+        id="title"
+        type="text"
+        value="<%= task.title %>"
+        required
+        />
+      <label for="date">Deadline</label>
+      <input class="add-task__input" id="date" type="date" value="<%= date %>" required <% if (task.someday) { %> <%= disabled %> <% } %> />
+      <div class="add-task__wrapper">
+        <input class="add-task__checkbox" id="someday" type="checkbox" <% if (task.someday) { %> <%= checked %> <% } %> />
+        <label for="someday">No deadline</label>
+      </div>
+      <label for="details">Details (optional)</label>
+      <textarea
+        class="add-task__textarea"
+        id="details"
+        maxlength="350"
+      ><%= details %></textarea>
+      <fieldset class="add-task__contexts">
+        <legend>Contexts</legend>
+        <input class="add-task__checkbox" id="outside" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'outside') >= 0) { %> <%= checked %> <% } %> />
+        <label for="outside" class="c-outside">outside</label>
+        <input class="add-task__checkbox" id="home" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'home') >= 0) { %> <%= checked %> <% } %> />
+        <label for="home" class="c-home">home</label>
+        <input class="add-task__checkbox" id="work" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'work') >= 0) { %> <%= checked %> <% } %> />
+        <label for="work" class="c-work">work</label>
+        <input class="add-task__checkbox" id="shopping" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'shopping') >= 0) { %> <%= checked %> <% } %> />
+        <label for="shopping" class="c-shopping">shopping</label>
+        <input class="add-task__checkbox" id="computer" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'computer') >= 0) { %> <%= checked %> <% } %> />
+        <label for="computer" class="c-computer">computer</label>
+        <input class="add-task__checkbox" id="phone" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'phone') >= 0) { %> <%= checked %> <% } %> />
+        <label for="phone" class="c-phone">phone</label>
+      </fieldset>
+      <label for="delegate">Delegated to (optional)</label>
+      <input class="add-task__input" id="delegate" type="text" value="<%= task.delegated %>" />
+      <div class="controllers">
+        <input class="controllers__reset" type="reset" value="Reset" />
+        <input class="controllers__edit" type="submit" value="Edit" />
+      </div>
+    </form>
+  </div>
+</main>
