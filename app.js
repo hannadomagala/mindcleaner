@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const config = require("config");
+const helmet = require("helmet");
 const app = express();
 
 // helpers imports
@@ -52,6 +53,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(helmet());
 
 // pages setup
 app.use("/", inboxRouter);
