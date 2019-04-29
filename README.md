@@ -26,6 +26,7 @@ This is an app made from scratch by me, as a part of Coders Camp.<br/>
 * mongodb / mongoose,
 * ejs views engine
 <br/><br/>
+
 **Future improvements**:
 * I know RWD needs some fixes, this is my next action
 * Custom contexts
