@@ -1051,6 +1051,10 @@ ul {
 
 
 @media (max-width: 900px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  
   .page-header__hamburger {
     margin: 30px;
     font-size: 2em;
@@ -1077,7 +1081,7 @@ ul {
   }
 
   .page-nav {
-    position: absolute;
+    position: fixed;
     width: 100%;
     min-height: 100vh;
     font-size: 1.2em;
