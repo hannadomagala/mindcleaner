@@ -1077,9 +1077,9 @@ ul {
   }
 
   .page-nav {
-    position: fixed;
+    position: absolute;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     font-size: 1.2em;
     transform: translateX(100vw);
     transition: all 0.3s ease-in;
