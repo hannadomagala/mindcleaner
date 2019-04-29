@@ -1,7 +1,8 @@
 ![Mind Cleaner](https://github.com/hannadomagala/mindcleaner/blob/master/screenshots/Untitled-7.jpg?raw=true)
 
 
-MindCleaner is a tool that helps you stay focused by GTD methology.
+MindCleaner is a tool that helps you stay focused by GTD methology.<br/>
+(*use desktop for now, there are some bugs to fix on small screens*)<br/>
 [Try yourself](https://mind-cleaner.herokuapp.com/)
 
 ## Stay focused
@@ -30,6 +31,7 @@ This is an app made from scratch by me, as a part of Coders Camp.<br/>
 **Future improvements**:
 * I know RWD needs some fixes, this is my next action
 * Custom contexts
+* Provide new feature - projects
 
 
 
