@@ -5,7 +5,7 @@
     "node": "10.15.1"
   },
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
