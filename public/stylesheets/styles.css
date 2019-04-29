@@ -1082,16 +1082,16 @@ ul {
 
   .page-nav {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     font-size: 1.2em;
     transform: translateX(100vw);
-    transition: all 0.3s ease-in;
+    transition: transform 0.3s ease-in;
   }
   
   .page-nav--toggle {
     transform: translateX(0px);
-    transition: all 0.3s ease-in;
+    transition: transform 0.3s ease-in;
   }
 
   .sort-by-context {
@@ -1119,7 +1119,7 @@ ul {
   }
 
   .page-content {
-    width: 100%;
+    width: 100vw;
     left: 0;
     font-size: 1.1em;
   }
