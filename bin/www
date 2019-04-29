@@ -92,9 +92,6 @@ function onListening() {
  */
 
 mongoose
-  .connect(
-    "mongodb+srv://hania:12345@mindcleaner-lqo9x.gcp.mongodb.net/test?retryWrites=true",
-    { useNewUrlParser: true }
-  )
+  .connect("db", { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB..."))
   .catch(err => console.log("Could not connect to MongoDB:", err));
