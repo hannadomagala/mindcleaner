@@ -1,5 +1,103 @@
-@media screen and (max-width: 900px){
+@media (max-width: 900px) {
   .page-header__hamburger {
+    margin: 30px;
+    font-size: 2em;
+    padding: 0px;
+    border: none;
+    display: block;
+  }
+
+  .page-header__logout {
+    border: none;
+    font-size: 2em;
+    padding: 0px;
     margin: 10px;
   }
+
+  .page-header__logout > span {
+    display: none;
+  }
+
+  .page-header__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-nav {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    font-size: 1.2em;
+    transform: translateX(100vw);
+    transition: all 0.3s ease-in;
+  }
+  
+  .page-nav--toggle {
+    transform: translateX(0px);
+    transition: all 0.3s ease-in;
+  }
+
+  .sort-by-context {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    font-size: 1.5em;
+    left: auto;
+    top: var(--header-height);
+    z-index: 2;
+    transform: translate(-100vw);
+  }
+  .sort-by-context--toggle {
+    transform: translateX(0px);
+    transition: all 0.3s ease-in;
+  }
+
+  .sort-by-context .fa-arrow-left{
+    color: var(--text-color);
+    font-size: 1.7em;
+  }
+
+  .sort-by-context .contexts__item {
+    padding: 15px;
+  }
+
+  .page-content {
+    width: 100%;
+    left: 0;
+    font-size: 1.1em;
+  }
+
+  .inbox__thought {
+    width: 80%;
+  }
+
+  .task {
+    width: 85%;
+  }
+
+  .add-task__contexts label {
+    font-size: 1.1em;
+    width: 90%;
+  }
+
+    .add-task__contexts > div {
+    margin: 20px 0;
+    display: block;
+  }
+  
+  .sections-wrapper {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .login-wrapper,
+  .signup-wrapper {
+    margin: 20px;
+  }
+
+  .login .page-wrapper {
+    height: auto;
+  }
+
 }

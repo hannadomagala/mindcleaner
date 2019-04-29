@@ -144,14 +144,20 @@
 }
 
 .sort-by-context {
-  width: 130px;
+  width: var(--nav-width);
   position: fixed;
-  left: calc(var(--nav-width) - 131px);
-  top: calc(var(--header-height) + 15px);
+  left: 0;
+  top: calc(var(--header-height) + 45px);
+  height: 100vh;
   background: white;
-  border: 1px solid var(--shadow-color);
   border-left: 0px;
-  transition: transform 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  transform: translateX(-500px);
+}
+
+.sort-by-context .fa-arrow-left {
+  color: var(--text-color);
+  font-size: 1.5em;
 }
 
 .sort-by-context .contexts {
@@ -162,14 +168,16 @@
 }
 
 .sort-by-context .contexts__item {
+  font-size: 1.2em;
   display: inline-block;
   width: auto;
   margin: 3px;
 }
 
 .sort-by-context--toggle {
-  transform: translateX(131px);
-  z-index: 1;
+  transform: translateX(0px);
+  z-index: 2;
+  transition: all 0.3s ease-in;
 }
 
 .skip-inbox {

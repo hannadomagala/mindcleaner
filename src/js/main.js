@@ -8,7 +8,7 @@ import inbox from "../css/inbox.css";
 import tasks from "../css/tasks.css";
 import contexts from "../css/contexts.css";
 import login from "../css/login.css";
-import rwd from "../css/mediaqueries";
+import rwd from "../css/mediaqueries.css";
 
 //basic functionality imports
 import highlightActive from "./menu";
@@ -33,11 +33,20 @@ if (pageName !== "login") {
 
   const logoutButton = document.querySelector(".page-header__logout");
   logoutButton.addEventListener("click", logoutUser);
+
+  // toogle menu
+  const menuBtn = document.querySelector(".page-header__hamburger");
+  const menuContent = document.querySelector(".page-nav");
+
+  menuBtn.addEventListener("click", e => {
+    menuContent.classList.toggle("page-nav--toggle");
+  });
 }
 
 //sort-by-context at page-nav
 const contextsContainer = document.querySelector(".sort-by-context");
 const contextsBtn = document.querySelector(".page-nav__link--sort");
+const contextsCloseBtn = document.querySelector(".contexts__close");
 
 if (contextsContainer) {
   const toggleContexts = e => {
@@ -46,14 +55,11 @@ if (contextsContainer) {
   };
 
   const closeContexts = e => {
-    console.log(e.target);
-    if (e.target !== contextsContainer && e.target !== contextsBtn) {
-      contextsContainer.classList.remove("sort-by-context--toggle");
-    } else return;
+    contextsContainer.classList.toggle("sort-by-context--toggle");
   };
 
   contextsBtn.addEventListener("click", toggleContexts);
-  document.body.addEventListener("click", closeContexts);
+  contextsCloseBtn.addEventListener("click", closeContexts);
 }
 
 // inbox functionality

@@ -28,18 +28,30 @@
       ><%= details %></textarea>
       <fieldset class="add-task__contexts">
         <legend>Contexts</legend>
-        <input class="add-task__checkbox" id="outside" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'outside') >= 0) { %> <%= checked %> <% } %> />
-        <label for="outside" class="c-outside">outside</label>
-        <input class="add-task__checkbox" id="home" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'home') >= 0) { %> <%= checked %> <% } %> />
-        <label for="home" class="c-home">home</label>
-        <input class="add-task__checkbox" id="work" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'work') >= 0) { %> <%= checked %> <% } %> />
-        <label for="work" class="c-work">work</label>
-        <input class="add-task__checkbox" id="shopping" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'shopping') >= 0) { %> <%= checked %> <% } %> />
-        <label for="shopping" class="c-shopping">shopping</label>
-        <input class="add-task__checkbox" id="computer" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'computer') >= 0) { %> <%= checked %> <% } %> />
-        <label for="computer" class="c-computer">computer</label>
-        <input class="add-task__checkbox" id="phone" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'phone') >= 0) { %> <%= checked %> <% } %> />
-        <label for="phone" class="c-phone">phone</label>
+        <div>
+            <input class="add-task__checkbox" id="phone" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'phone') >= 0) { %> <%= checked %> <% } %> />
+            <label for="phone" class="c-phone">phone</label>
+        </div>
+        <div>
+            <input class="add-task__checkbox" id="computer" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'computer') >= 0) { %> <%= checked %> <% } %> />
+            <label for="computer" class="c-computer">computer</label>
+        </div>
+        <div>
+          <input class="add-task__checkbox" id="shopping" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'shopping') >= 0) { %> <%= checked %> <% } %> />
+          <label for="shopping" class="c-shopping">shopping</label>
+        </div>
+        <div>
+          <input class="add-task__checkbox" id="work" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'work') >= 0) { %> <%= checked %> <% } %> />
+          <label for="work" class="c-work">work</label>
+        </div>
+        <div>
+          <input class="add-task__checkbox" id="home" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'home') >= 0) { %> <%= checked %> <% } %> />
+          <label for="home" class="c-home">home</label>
+        </div>
+        <div>
+          <input class="add-task__checkbox" id="outside" type="checkbox" <% if (task.contexts.findIndex((context) => context.name === 'outside') >= 0) { %> <%= checked %> <% } %> />
+          <label for="outside" class="c-outside">outside</label>
+        </div>
       </fieldset>
       <label for="delegate">Delegated to (optional)</label>
       <input class="add-task__input" id="delegate" type="text" value="<%= task.delegated %>" />

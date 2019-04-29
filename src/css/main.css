@@ -42,4 +42,13 @@ ul {
   text-align: center;
 }
 
+.page-header__hamburger {
+  display: none;
+}
+
+  .add-task__contexts > div {
+    margin: 10px 0;
+    display: inline;
+  }
+
   

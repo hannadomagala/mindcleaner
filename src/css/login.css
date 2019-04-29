@@ -1,17 +1,15 @@
-html {
-  min-height: 100%;
-}
-
 .sections-wrapper{ 
   display: flex;
   position: relative;
+  
 }
 
 .login {
   background: linear-gradient(
     75deg,
     var(--primary-color) 0%,
-    var(--extra-color) 100%)
+    var(--extra-color) 100%);
+    min-height: 100%;
 }
 
 .login .page-wrapper {
