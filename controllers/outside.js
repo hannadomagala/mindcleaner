@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const Task = require("../../models/task");
+const auth = require("../middlewares/auth");
+const Task = require("../models/task");
 
-/* GET outside */
-router.get("/", async (req, res) => {
+/* GET outside-contexts */
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   const tasksList = await Task.find({
-    contexts: { name: "outside", class: "c-outside" }
+    contexts: { name: "outside", class: "c-outside" },
+    userId: user._id
   });
 
   const number = tasksList.length;
@@ -16,7 +20,8 @@ router.get("/", async (req, res) => {
     urlName: "outside",
     description: "tasks to be done outside",
     tasks: tasksList,
-    counter: number
+    counter: number,
+    user: user.name
   });
 });
 

@@ -7,12 +7,15 @@ import pageContent from "../css/page-content.css";
 import inbox from "../css/inbox.css";
 import tasks from "../css/tasks.css";
 import contexts from "../css/contexts.css";
+import login from "../css/login.css";
+import rwd from "../css/mediaqueries";
 
 //basic functionality imports
 import highlightActive from "./menu";
 
 // crud imports
 import { createThought, deleteThought } from "./inbox-forms";
+import { loginUser, createUser, logoutUser } from "./auth-forms";
 import {
   someday,
   date,
@@ -25,7 +28,12 @@ import {
 } from "./tasks-forms";
 
 //highlight active page at page-nav
-highlightActive();
+if (pageName !== "login") {
+  highlightActive();
+
+  const logoutButton = document.querySelector(".page-header__logout");
+  logoutButton.addEventListener("click", logoutUser);
+}
 
 //sort-by-context at page-nav
 const contextsContainer = document.querySelector(".sort-by-context");
@@ -47,8 +55,9 @@ if (contextsContainer) {
   contextsBtn.addEventListener("click", toggleContexts);
   document.body.addEventListener("click", closeContexts);
 }
+
+// inbox functionality
 if (pageName === "inbox") {
-  //inbox CRUD
   const addThoughtForm = document.querySelector(".add-thought");
   const deleteThoughtButtons = document.querySelectorAll(".delete-thought");
 
@@ -59,6 +68,7 @@ if (pageName === "inbox") {
   }
 }
 
+// add task functionality
 if (pageName === "addtask") {
   const addTaskForm = document.querySelector(".add-task__form");
 
@@ -66,6 +76,7 @@ if (pageName === "addtask") {
   addTaskForm.addEventListener("submit", createTask);
 }
 
+// edit task functionality
 if (pageName === "edittask") {
   const addTaskForm = document.querySelector(".add-task__form");
 
@@ -73,6 +84,7 @@ if (pageName === "edittask") {
   addTaskForm.addEventListener("submit", editTask);
 }
 
+// tasks views functionality
 if (
   pageName !== "inbox" &&
   pageName !== "addtask" &&
@@ -86,6 +98,7 @@ if (
   }
 }
 
+// done task view functionality
 if (pageName === "done") {
   const doneTaskForms = document.querySelectorAll(".task__delete-form");
   console.log(doneTaskForms);
@@ -93,4 +106,13 @@ if (pageName === "done") {
   for (const form of doneTaskForms) {
     form.addEventListener("submit", deleteTask);
   }
+}
+
+//login functionality
+if (pageName === "login") {
+  const loginForm = document.querySelector(".login__form");
+  const signUpForm = document.querySelector(".signup__form");
+
+  loginForm.addEventListener("submit", loginUser);
+  signUpForm.addEventListener("submit", createUser);
 }

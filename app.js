@@ -1,49 +1,52 @@
-// imports
+// packages imports
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const config = require("config");
 const app = express();
 
 // helpers imports
 const getWeekDay = require("./helpers/getWeekDay");
 const getDay = require("./helpers/getDay");
 
-// pages imports
-const indexRouter = require("./routes/pages/index");
-const inboxRouter = require("./routes/pages/inbox");
-const allRouter = require("./routes/pages/all");
-const todayRouter = require("./routes/pages/today");
-const thisweekRouter = require("./routes/pages/thisweek");
-const somedayRouter = require("./routes/pages/someday");
-const waitingRouter = require("./routes/pages/waiting");
-const doneRouter = require("./routes/pages/done");
-const addRouter = require("./routes/pages/addtask");
-const editRouter = require("./routes/pages/edittask");
-// pages contexts imports
-const outsideRouter = require("./routes/pages/outside");
-const computerRouter = require("./routes/pages/computer");
-const workRouter = require("./routes/pages/work");
-const phoneRouter = require("./routes/pages/phone");
-const homeRouter = require("./routes/pages/home");
-const shoppingRouter = require("./routes/pages/shopping");
+// pages routers imports
+const loginRouter = require("./controllers/login");
+const inboxRouter = require("./controllers/inbox");
+const allRouter = require("./controllers/all");
+const todayRouter = require("./controllers/today");
+const thisweekRouter = require("./controllers/thisweek");
+const somedayRouter = require("./controllers/someday");
+const waitingRouter = require("./controllers/waiting");
+const doneRouter = require("./controllers/done");
+const addRouter = require("./controllers/addtask");
+const editRouter = require("./controllers/edittask");
 
-// api imports
-const thought = require("./routes/thoughts");
-const task = require("./routes/tasks");
+// pages contexts routers imports
+const outsideRouter = require("./controllers/outside");
+const computerRouter = require("./controllers/computer");
+const workRouter = require("./controllers/work");
+const phoneRouter = require("./controllers/phone");
+const homeRouter = require("./controllers/home");
+const shoppingRouter = require("./controllers/shopping");
 
-//local variables for pages
-app.locals.userName = "Master";
+// routers imports
+const thoughts = require("./routes/thoughts");
+const tasks = require("./routes/tasks");
+const users = require("./routes/users");
+const auth = require("./routes/auth");
+
+// local variables for pages
 app.locals.getWeekDay = getWeekDay;
 app.locals.getDay = getDay;
 
-// templates
+// templates setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-//setup
+// setup
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -51,7 +54,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // pages setup
-app.use("/", indexRouter);
+app.use("/", inboxRouter);
 app.use("/inbox", inboxRouter);
 app.use("/all", allRouter);
 app.use("/today", todayRouter);
@@ -61,7 +64,8 @@ app.use("/waiting", waitingRouter);
 app.use("/done", doneRouter);
 app.use("/addtask", addRouter);
 app.use("/edittask", editRouter);
-//contexts pages setus
+
+// contexts pages setus
 app.use("/outside", outsideRouter);
 app.use("/computer", computerRouter);
 app.use("/work", workRouter);
@@ -69,9 +73,17 @@ app.use("/phone", phoneRouter);
 app.use("/home", homeRouter);
 app.use("/shopping", shoppingRouter);
 
-// tasks CRUD
-app.use("/thoughts", thought);
-app.use("/tasks", task);
+// api
+app.use("/thoughts", thoughts);
+app.use("/tasks", tasks);
+app.use("/users", users);
+app.use("/auth", auth);
+app.use("/logout", auth);
+
+if (!config.get("jwtPrivateKey")) {
+  console.error("FATAL ERROR: jwtPrivateKey is not defined.");
+  process.exit(1);
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

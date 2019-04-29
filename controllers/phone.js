@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const Task = require("../../models/task");
+const auth = require("../middlewares/auth");
+const Task = require("../models/task");
 
-/* GET phone */
-router.get("/", async (req, res) => {
+/* GET phone-contexts */
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   const tasksList = await Task.find({
-    contexts: { name: "phone", class: "c-phone" }
+    contexts: { name: "phone", class: "c-phone" },
+    userId: user._id
   });
 
   const number = tasksList.length;
@@ -16,7 +20,8 @@ router.get("/", async (req, res) => {
     urlName: "phone",
     description: "tasks to be done at phone",
     tasks: tasksList,
-    counter: number
+    counter: number,
+    user: user.name
   });
 });
 

@@ -30,6 +30,8 @@ const toggleDate = e => {
 const createTask = async e => {
   e.preventDefault();
 
+  const userId = e.target.dataset.user;
+
   const contexts = [outside, home, work, shopping, computer, phone];
   const contextsToSend = [];
 
@@ -59,7 +61,8 @@ const createTask = async e => {
         waiting: waiting,
         delegated: delegate.value,
         done: false,
-        thoughtId: thoughtId
+        thoughtId: thoughtId,
+        userId: userId
       })
     });
 

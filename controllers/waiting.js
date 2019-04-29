@@ -1,12 +1,16 @@
 var express = require("express");
 var router = express.Router();
-const Task = require("../../models/task");
+const auth = require("../middlewares/auth");
+const Task = require("../models/task");
 
 /* GET waiting */
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   const tasksList = await Task.find({
     waiting: true,
-    done: false
+    done: false,
+    userId: user._id
   });
 
   const number = tasksList.length;
@@ -16,7 +20,8 @@ router.get("/", async (req, res) => {
     urlName: "waiting",
     description: "tasks waiting to be done by someone",
     counter: number,
-    tasks: tasksList
+    tasks: tasksList,
+    user: user.name
   });
 });
 

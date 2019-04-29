@@ -1,10 +1,12 @@
 var express = require("express");
 var router = express.Router();
-const Task = require("../../models/task");
+const Task = require("../models/task");
+const auth = require("../middlewares/auth");
 const moment = require("moment");
 
 /* GET this week */
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
   const start = moment()
     .startOf("day")
     .format();
@@ -14,7 +16,8 @@ router.get("/", async (req, res) => {
 
   const tasksList = await Task.find({
     date: { $gte: start, $lte: end },
-    done: false
+    done: false,
+    userId: user._id
   });
   const number = await Task.find({
     date: { $gte: start, $lte: end }
@@ -25,7 +28,9 @@ router.get("/", async (req, res) => {
     urlName: "thisweek",
     description: "tasks to be done this week",
     counter: number,
-    tasks: tasksList
+    tasks: tasksList,
+    user: user.name,
+    userId: user._id
   });
 });
 

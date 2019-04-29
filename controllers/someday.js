@@ -1,12 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const Task = require("../../models/task");
+const auth = require("../middlewares/auth");
+const Task = require("../models/task");
 
-/* GET somedayk */
-router.get("/", async (req, res) => {
+/* GET someday */
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   const tasksList = await Task.find({
     someday: true,
-    done: false
+    done: false,
+    userId: user._id
   });
 
   const number = tasksList.length;
@@ -16,7 +20,8 @@ router.get("/", async (req, res) => {
     urlName: "someday",
     description: "tasks waiting to be planned",
     counter: number,
-    tasks: tasksList
+    tasks: tasksList,
+    user: user.name
   });
 });
 

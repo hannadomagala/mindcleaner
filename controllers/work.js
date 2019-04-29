@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const Task = require("../../models/task");
+const auth = require("../middlewares/auth");
+const Task = require("../models/task");
 
-/* GET outside */
-router.get("/", async (req, res) => {
+/* GET work-contexts */
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   const tasksList = await Task.find({
-    contexts: { name: "work", class: "c-work" }
+    contexts: { name: "work", class: "c-work" },
+    userId: user._id
   });
 
   const number = tasksList.length;
@@ -16,7 +20,8 @@ router.get("/", async (req, res) => {
     urlName: "work",
     description: "tasks to be done at work",
     tasks: tasksList,
-    counter: number
+    counter: number,
+    user: user.name
   });
 });
 

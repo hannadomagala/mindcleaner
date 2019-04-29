@@ -9,7 +9,8 @@ const taskSchema = new mongoose.Schema({
   waiting: Boolean,
   delegated: String,
   done: Boolean,
-  thoughtId: String
+  thoughtId: String,
+  userId: String
 });
 
 const Task = mongoose.model("Task", taskSchema);

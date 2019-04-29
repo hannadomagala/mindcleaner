@@ -9,7 +9,7 @@
     </p>
   </header>
   <section class="tasks">
-    <form action="/thoughts" class="add-thought">
+    <form action="/thoughts" class="add-thought" data-user="<%= userId %>">
       <input
         class="add-thought__input"
         type="text"
@@ -38,7 +38,7 @@
           <form
             action="/thoughts/<%= thoughts[i]._id %>"
             class="delete-thought"
-            data-id="<%= thoughts[i]._id %>"
+            data-id="<%= thoughts[i]._id %>",
           >
             <input class="delete-thought__send" type="submit" value="" />
           </form>

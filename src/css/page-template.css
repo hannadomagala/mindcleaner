@@ -28,6 +28,9 @@
 .page-header__logout {
   margin-right: 40px;
   font-size: 0.8em;
+  border: 1px solid white;
+  padding: 10px 15px;
+  color: white;
 }
 
 .page-header__logout i {

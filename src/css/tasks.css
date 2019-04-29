@@ -29,6 +29,10 @@
   font-size: 1em;
 }
 
+.done .task__name {
+  text-decoration: line-through;
+}
+
 .task__delegation {
   font-size: 0.7em;
   margin: 0;

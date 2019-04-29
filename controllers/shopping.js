@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const Task = require("../../models/task");
+const auth = require("../middlewares/auth");
+const Task = require("../models/task");
 
-/* GET shopping */
-router.get("/", async (req, res) => {
+/* GET shopping-contexts */
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   const tasksList = await Task.find({
-    contexts: { name: "shopping", class: "c-shopping" }
+    contexts: { name: "shopping", class: "c-shopping" },
+    userId: user._id
   });
 
   const number = tasksList.length;
@@ -16,7 +20,8 @@ router.get("/", async (req, res) => {
     urlName: "shopping",
     description: "things to buy",
     tasks: tasksList,
-    counter: number
+    counter: number,
+    user: user.name
   });
 });
 

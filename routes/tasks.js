@@ -14,9 +14,10 @@ router.post("/", async (req, res) => {
     waiting: req.body.waiting,
     delegated: req.body.delegated,
     done: req.body.done,
-    thoughtId: req.body.thoughtId
+    thoughtId: req.body.thoughtId,
+    userId: req.body.userId
   });
-  console.log(task.details);
+
   await task.save();
   Thought.findOneAndDelete({ _id: task.thoughtId })
     .then(() => res.send(task))

@@ -443,6 +443,9 @@ ul {
 .page-header__logout {
   margin-right: 40px;
   font-size: 0.8em;
+  border: 1px solid white;
+  padding: 10px 15px;
+  color: white;
 }
 
 .page-header__logout i {
@@ -823,6 +826,10 @@ ul {
   font-size: 1em;
 }
 
+.done .task__name {
+  text-decoration: line-through;
+}
+
 .task__delegation {
   font-size: 0.7em;
   margin: 0;
@@ -907,3 +914,124 @@ ul {
 .c-work {
     background: rgb(209, 37, 37);
 }
+html {
+  min-height: 100%;
+}
+
+.sections-wrapper{ 
+  display: flex;
+  position: relative;
+}
+
+.login {
+  background: linear-gradient(
+    75deg,
+    var(--primary-color) 0%,
+    var(--extra-color) 100%)
+}
+
+.login .page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-wrapper,
+.signup-wrapper {
+  background: rgb(255,255,255, .9);
+  padding: 20px 15px 20px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-wrapper {
+  border-right: 1px solid var(--shadow-color);
+  border-radius: 3px 0px 0px 3px;
+}
+
+.signup-wrapper {
+  border-radius: 0px 3px 3px 0px;
+}
+
+.signup-wrapper .fa-plus {
+  color: var(--secondary-color);
+}
+
+.login .wrapper {
+  border: var(--shadow-color);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__header,
+.signup__header {
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 2px;
+  margin: 10px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.login__form,
+.signup__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__form label,
+.signup__form label {
+  align-self: start;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+.login__input,
+.signup__input {
+  margin-bottom: 20px;
+  min-width: 250px;
+  padding: 7px;
+  font-size: 0.8em;
+  border: 1px solid var(--shadow-color);
+}
+
+.login__send,
+.signup__send {
+  background-color: #fff;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 8px;
+  min-width: 90px;
+  font-weight: 600;
+  font-size: .9em;
+  margin: 10px;
+  position: relative;
+}
+
+.login__error,
+.signup__error {
+  width: 250px;
+  color:rgb(211, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+  margin: 5px auto;
+  font-size: .7em;
+}
+
+.signup__success {
+  width: 250px;
+  color:var(--font-color);
+  border-radius: 3px;
+  text-align: center;
+  margin: 5px auto;
+  font-size: .7em;
+}
+
+

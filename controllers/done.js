@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const Task = require("../../models/task");
+const auth = require("../middlewares/auth");
+const Task = require("../models/task");
 
-/* GET donek */
-router.get("/", async (req, res) => {
+/* GET done */
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   const tasksList = await Task.find({
-    done: true
+    done: true,
+    userId: user._id
   });
 
   const number = tasksList.length;
@@ -15,7 +19,8 @@ router.get("/", async (req, res) => {
     urlName: "done",
     description: "tasks done",
     counter: number,
-    tasks: tasksList
+    tasks: tasksList,
+    user: user.name
   });
 });
 

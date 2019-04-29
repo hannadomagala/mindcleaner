@@ -1,25 +1,33 @@
 var express = require("express");
 var router = express.Router();
-const Thought = require("../../models/thought");
+const auth = require("../middlewares/auth");
+const Thought = require("../models/thought");
 
 /* GET addtask */
-router.get("/", function(req, res, next) {
+router.get("/", auth, async (req, res) => {
+  const user = req.user;
+
   res.render("addtask", {
     name: "Add task",
     urlName: "addtask",
     input: "",
-    thoughtId: ""
+    thoughtId: "",
+    user: user.name,
+    userId: user._id
   });
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", auth, async (req, res) => {
+  const user = req.user;
   const thought = await Thought.findOne({ _id: req.params.id });
 
   res.render("addtask", {
     name: "Add task",
     urlName: "addtask",
     input: thought.title,
-    thoughtId: thought._id
+    thoughtId: thought._id,
+    user: user.name,
+    userId: user._id
   });
 });
 
